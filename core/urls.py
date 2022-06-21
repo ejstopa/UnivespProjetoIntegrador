@@ -1,7 +1,8 @@
 from django.urls import path
 
 from .views import list_question, create_question, update_question, delete_question, list_theme, create_theme, delete_theme, update_theme
-
+from django.conf.urls.static import static
+from django.conf import settings
 app_name = "core"
 
 urlpatterns = [
@@ -13,4 +14,4 @@ urlpatterns = [
     path('newTheme', create_theme, name='create_theme'),
     path('updateTheme/<int:id>/', update_theme, name='update_theme'),
     path('deleteTheme/<int:id>/', delete_theme, name='delete_theme'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,4 +1,3 @@
-from gtts import gTTS 
 import os  
 from io import BytesIO
 import pyttsx3

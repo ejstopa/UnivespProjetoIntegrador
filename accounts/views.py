@@ -11,12 +11,12 @@ class IndexView(LoginRequiredMixin, TemplateView):
 
     template_name = 'accounts/index.html'
 
-class RegisterView(TemplateView):
+class RegisterView(CreateView):
 
-    model = User
+    # model = User
     template_name = 'accounts/register.html'
-    form_class = UserAdminCreationForm
-    success_url = reverse_lazy('login')
+    # form_class = UserAdminCreationForm
+    # success_url = reverse_lazy('login')
 
 class UpdateUserView(LoginRequiredMixin, UpdateView):
 

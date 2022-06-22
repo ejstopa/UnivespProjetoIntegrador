@@ -12,7 +12,7 @@ class IndexView(LoginRequiredMixin, TemplateView):
     template_name = 'accounts/index.html'
 
 
-class RegisterView(LoginRequiredMixin, TemplateView):
+class RegisterView(CreateView):
 
     template_name = 'accounts/index.html'
 

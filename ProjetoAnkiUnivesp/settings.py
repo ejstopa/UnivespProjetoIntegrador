@@ -89,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ankiunivesp',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'USER': '_admin',
+        'PASSWORD': 'Serei@400',
+        'HOST': 'projetoserei.mysql.database.azure.com',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }

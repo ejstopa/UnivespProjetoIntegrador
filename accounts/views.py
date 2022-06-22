@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, TemplateView, UpdateView, FormView
+from django.views.generic import  CreateView, TemplateView, UpdateView, FormView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import PasswordChangeForm
+
 
 from .models import User
 from .forms import UserAdminCreationForm
@@ -13,10 +14,10 @@ class IndexView(LoginRequiredMixin, TemplateView):
 
 class RegisterView(CreateView):
 
-    # model = User
+    model = User
     template_name = 'accounts/register.html'
-    # form_class = UserAdminCreationForm
-    # success_url = reverse_lazy('login')
+    form_class = UserAdminCreationForm
+    success_url = reverse_lazy('login')
 
 class UpdateUserView(LoginRequiredMixin, UpdateView):
 

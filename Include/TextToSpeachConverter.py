@@ -6,7 +6,7 @@ from gtts import gTTS
 from playsound import playsound
 from pathlib import Path
 import pygame
-
+import pygame.mixer
 
 
         

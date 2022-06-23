@@ -22,7 +22,7 @@ class TextToSpeachConverterGtts:
         
         BASE_DIR = Path(__file__).resolve().parent.parent
         staticRoot = os.path.join(BASE_DIR,'staticfiles')
-        outputFileName = os.path.join(staticRoot/'output.mp3')
+        outputFileName = os.path.join(staticRoot,'output.mp3')
         myObj = gTTS(text=textToConvert, lang= str(language), slow=False)   
         myObj.save(outputFileName)       
 

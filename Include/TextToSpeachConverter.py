@@ -6,7 +6,8 @@ from gtts import gTTS
 from playsound import playsound
 from pathlib import Path
 import pygame
-
+import pyglet
+import time
 
 
 class TextToSpeachConverterPyttsx3:
@@ -35,14 +36,21 @@ class TextToSpeachConverterGtts:
 
         # playsound(outputFileName)
 
-        pygame.init()
-        pygame.mixer.init()
-    
-        pygame.mixer.music.load(outputFileName, 'mp3')
-        pygame.mixer.music.play()
 
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
+        # pygame.init()
+        # pygame.mixer.init()
+    
+        # pygame.mixer.music.load(outputFileName, 'mp3')
+        # pygame.mixer.music.play()
+
+        # while pygame.mixer.music.get_busy():
+        #     pygame.time.Clock().tick(10)
+
+        music = pyglet.media.load("", outputFileName, streaming=True)
+        music.play()
+
+        time.sleep(music.duration) #prevent from killing
+
 
         # os.remove(outputFileName)
 

@@ -169,8 +169,8 @@ def list_attempt(request):
     # attempts = Attempt.objects.filter(attempt_number=1,user=user_id)
     lastAttempt = current_user.attempt_set.order_by('-attempt_number')[0]
     attempts = Attempt.objects.filter(attempt_number=lastAttempt.attempt_number,user=user_id)
-    Convert = TextToSpeachConverter.TextToSpeachConverterPyttsx3()
-    # Convert = TextToSpeachConverter.TextToSpeachConverterGtts()
+    # Convert = TextToSpeachConverter.TextToSpeachConverterPyttsx3()
+    Convert = TextToSpeachConverter.TextToSpeachConverterGtts()
 
     # attempts = AttemptForm(request.POST or None, instance=antes)
     if request.POST:
@@ -247,8 +247,8 @@ def create_attempt(request):
 def readText(request):
    # print (request.GET)
     decodeTextUrl = urllib.parse.unquote(str(request.GET['text']))
-    Convert = TextToSpeachConverter.TextToSpeachConverterPyttsx3()
-    # Convert = TextToSpeachConverter.TextToSpeachConverterGtts()
+    # Convert = TextToSpeachConverter.TextToSpeachConverterPyttsx3()
+    Convert = TextToSpeachConverter.TextToSpeachConverterGtts()
     #print('----------------------------+++++++++------------------')
     #print(urllib.parse.unquote(str(request.GET['text'])))
     Convert.ConvertAndPlay(decodeTextUrl)

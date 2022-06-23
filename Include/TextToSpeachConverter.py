@@ -5,8 +5,9 @@ from gtts import gTTS
 from playsound import playsound
 from pathlib import Path
 import pygame
-import pygame.mixer
-
+import time
+from tempfile import TemporaryFile
+from IPython.display import Audio
         
 class TextToSpeachConverterPyttsx3:
     
@@ -26,6 +27,7 @@ class TextToSpeachConverterGtts:
         staticRoot = os.path.join(BASE_DIR,'staticfiles')
         # outputFileName = os.path.join(staticRoot,'output.mp3')
         outputFileName = BytesIO()
+        # outputFileName = TemporaryFile()
         myObj = gTTS(text=textToConvert, lang= str(language), slow=False)   
         # myObj.save(outputFileName) 
         myObj.write_to_fp(outputFileName)   
@@ -38,9 +40,16 @@ class TextToSpeachConverterGtts:
     
         pygame.mixer.music.load(outputFileName, 'mp3')
         pygame.mixer.music.play()
+        time.sleep(10)
 
         while pygame.mixer.music.get_busy():
             pygame.time.Clock().tick(10)
+
+
+        # Audio(outputFileName.read(), autoplay=True)
+        # time.sleep(5)
+        # outputFileName.close()
+
 
 
         # os.remove(outputFileName)

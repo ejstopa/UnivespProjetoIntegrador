@@ -21,7 +21,7 @@ class TextToSpeachConverterGtts:
     def ConvertAndPlay(self, textToConvert : str, language : str = 'pt-br'):
         
         BASE_DIR = Path(__file__).resolve().parent.parent
-        outputFileName = os.path.join(BASE_DIR, 'core\static\media\output.mp3')
+        outputFileName = os.path.join(BASE_DIR, 'core/static/media/output.mp3')
         myObj = gTTS(text=textToConvert, lang= str(language), slow=False)   
         myObj.save(outputFileName)       
 

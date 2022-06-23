@@ -1,4 +1,5 @@
-import os  
+import os
+os.environ['SDL_AUDIODRIVER'] = 'dsp'
 from io import BytesIO
 import pyttsx3
 from gtts import gTTS 

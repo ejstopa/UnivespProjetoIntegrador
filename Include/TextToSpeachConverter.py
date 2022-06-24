@@ -47,9 +47,9 @@ class TextToSpeachConverterGtts:
         # while pygame.mixer.music.get_busy():
         #     pygame.time.Clock().tick(10)
 
-        from pyglet.media.codecs import gstreamer
+        from pyglet.media.codecs.gstreamer import GStreamerDecoder
         
-        music = pyglet.media.load('.mp3', outputFileName, streaming=False, decoder=gstreamer)
+        music = pyglet.media.load('.mp3', outputFileName, streaming=False, decoder=GStreamerDecoder)
         music.play()
         pyglet.app.run()
 

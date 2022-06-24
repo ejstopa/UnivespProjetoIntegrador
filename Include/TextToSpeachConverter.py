@@ -47,7 +47,7 @@ class TextToSpeachConverterGtts:
         #     pygame.time.Clock().tick(10)
 
        
-        music = pyglet.media.load("", outputFileName, streaming=False,)
+        music = pyglet.media.load("teste.mp3", outputFileName, streaming=False,)
         music.play()
         pyglet.app.run()
 

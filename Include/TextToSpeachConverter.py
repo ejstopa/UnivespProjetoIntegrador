@@ -49,7 +49,7 @@ class TextToSpeachConverterGtts:
 
         from pyglet.media.codecs import gstreamer
         
-        music = pyglet.media.load("", outputFileName, streaming=False, decoder=gstreamer )
+        music = pyglet.media.load("", outputFileName, streaming=False )
         music.play()
         pyglet.app.run()
 

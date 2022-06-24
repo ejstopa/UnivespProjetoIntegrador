@@ -1,3 +1,4 @@
+from json import decoder
 import os
 os.environ['SDL_AUDIODRIVER'] = 'dsp'
 from io import BytesIO
@@ -46,8 +47,9 @@ class TextToSpeachConverterGtts:
         # while pygame.mixer.music.get_busy():
         #     pygame.time.Clock().tick(10)
 
-       
-        music = pyglet.media.load("teste.mp3", outputFileName, streaming=False,)
+        from pyglet.media.codecs import gstreamer
+        
+        music = pyglet.media.load("", outputFileName, streaming=False, decoder=gstreamer )
         music.play()
         pyglet.app.run()
 

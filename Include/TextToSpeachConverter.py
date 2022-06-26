@@ -6,9 +6,7 @@ from gtts import gTTS
 from playsound import playsound
 from pathlib import Path
 import pygame
-import pyglet
-import time
-import simpleaudio
+
 
 
 class TextToSpeachConverterPyttsx3:

@@ -7,9 +7,9 @@ from django.db.models import fields
 from .models import Question, Theme, Attempt
 
 class ContactForm(forms.Form):
-    name = forms.CharField(label='Nome')
-    email = forms.EmailField(label='E-mail')
-    message = forms.CharField(label='Mensagem', widget=forms.Textarea(attrs={'cols': '40', 'rows': '4'}))
+    name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Nome'}))
+    email = forms.EmailField(label='',widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+    message = forms.CharField(label='', widget=forms.Textarea(attrs={'cols': '40', 'rows': '4', 'placeholder': 'Mensagem'}))
 
     def send_mail(self):      
         name = self.cleaned_data['name']

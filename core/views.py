@@ -30,6 +30,7 @@ def contact(request):
     if form.is_valid():     
         form.send_mail()
         success = True
+        form = ContactForm()
 
     context = {
         'form': form,

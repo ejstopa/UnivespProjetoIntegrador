@@ -45,10 +45,10 @@
             <lable class="control-label for="quantidade_perguntas">Escolha a quantidade de perguntas que deseja:</lable>
             <select class="form-control" name="quantidade_perguntas" id="quantidade_perguntas">
                     <option value=1> 1 pergunta </option>
-                    <option value=2> 2 pergunta </option>
-                    <option value=3> 3 pergunta </option>
-                    <option value=5> 5 pergunta </option>
-                    <option value=10> 10 pergunta </option>
+                    <option value=2> 2 perguntas </option>
+                    <option value=3> 3 perguntas </option>
+                    <option value=5> 5 perguntas </option>
+                    <option value=10> 10 perguntas </option>
             </select>
         </div>           
         <!-- {% for field in form %}
@@ -71,9 +71,9 @@
         {% endfor %} -->
         <div class="form-group">
             {% if themes %}
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary">Criar</button>
             {% else %}
-                <button type="button" class="btn btn-primary" disabled>Salvar</button>
+                <button type="button" class="btn btn-primary" disabled>Criar</button>
             {% endif %}  
 
         </div>

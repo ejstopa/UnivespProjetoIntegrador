@@ -27,7 +27,7 @@ index = IndexView.as_view()
 def contact(request):
     success = False        
     form = ContactForm(request.POST or None)
-    if form.is_valid():
+    if form.is_valid():     
         form.send_mail()
         success = True
 
@@ -194,9 +194,9 @@ def list_attempt(request):
         return render(request, 'alert.html', {'no_record_check': 1})
 
     # Falar as perguntas geradas
-    for attempt in attempts:
-        Convert.ConvertAndPlay('Pergunta ' + str(questionCount) + ':' +  attempt.question.description)
-        questionCount += 1
+    # for attempt in attempts:
+    #     Convert.ConvertAndPlay('Pergunta ' + str(questionCount) + ':' +  attempt.question.description)
+    #     questionCount += 1
 
     return render(request, 'attempts.html', {'attempts': attempts})
 

@@ -1,6 +1,5 @@
 from json import decoder
 import os
-os.environ['SDL_AUDIODRIVER'] = 'dsp'
 from io import BytesIO
 import pyttsx3
 from gtts import gTTS 
@@ -9,6 +8,7 @@ from pathlib import Path
 import pygame
 import pyglet
 import time
+import simpleaudio
 
 
 class TextToSpeachConverterPyttsx3:
@@ -36,29 +36,26 @@ class TextToSpeachConverterGtts:
         outputFileName.seek(0)
 
         # playsound(outputFileName)
+         # os.remove(outputFileName)
 
 
-        # pygame.init()
-        # pygame.mixer.init()
+        pygame.init()
+        pygame.mixer.init()
     
-        # pygame.mixer.music.load(outputFileName, 'mp3')
-        # pygame.mixer.music.play()
+        pygame.mixer.music.load(outputFileName, 'mp3')
+        pygame.mixer.music.play()
 
-        # while pygame.mixer.music.get_busy():
-        #     pygame.time.Clock().tick(10)
+        while pygame.mixer.music.get_busy():
+            pygame.time.Clock().tick(10)
+    
+        # music = pyglet.media.load("", outputFileName, streaming=False)
+        # music.play()
+        # pyglet.app.run()
 
-        # from pyglet.media.codecs.gstreamer import GStreamerDecoder
-        
-        music = pyglet.media.load("", outputFileName, streaming=False)
-        music.play()
-        pyglet.app.run()
-
-
-        time.sleep(music.duration) #prevent from killing
+        # time.sleep(music.duration) #prevent from killing
 
 
-        # os.remove(outputFileName)
-
+       
 
     
 

@@ -56,7 +56,7 @@ class Attempt(models.Model):
     difficult = models.IntegerField(choices=Difficults_options.choices, verbose_name='Dificuldade')
     question = models.ForeignKey(Question, on_delete=models.CASCADE,verbose_name='Questão')
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='usuários')
-    
+
     class Meta:
         db_table = 'attempts'
 
